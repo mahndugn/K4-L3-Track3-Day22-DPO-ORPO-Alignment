@@ -1,0 +1,9 @@
+{
+  "unsloth": "2026.10.3",
+  "transformers": "5.17.0",
+  "torch": "2.11.0+cu130",
+  "trl": "1.13.0",
+  "peft": "0.21.1",
+  "datasets": "4.8.5",
+  "bitsandbytes": "0.50.2"
+}

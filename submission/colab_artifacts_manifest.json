@@ -1,0 +1,62 @@
+{
+  "adapters/sft-mini/adapter_config.json": {
+    "size": 1339,
+    "sha256": "907aa5b73e713777225f1ed6317cde584ed64a13cae89d0f0f050645a20a4059"
+  },
+  "adapters/dpo/adapter_config.json": {
+    "size": 1324,
+    "sha256": "b1b9747ce718cca242e35b1e1ef4236a2f874eadfaea70231d919e94e4229775"
+  },
+  "adapters/dpo/dpo_metrics.json": {
+    "size": 804,
+    "sha256": "ece206e339a4431a2bc1175c9fe5735b373986e88fa3ad31cb2d7a16ce4d0d6a"
+  },
+  "adapters/dpo/split.json": {
+    "size": 159,
+    "sha256": "965508ac8e1669a3f1b59a77433b1b87467b2d7f7d9ae8a9ff889015e74f0c50"
+  },
+  "models/sft-merged/config.json": {
+    "size": 1804,
+    "sha256": "93805895bae1690606f33d211ec52fa19bbcc4b9dab4cb348518bea4fcccb1f1"
+  },
+  "data/pref/train.parquet": {
+    "size": 1790956,
+    "sha256": "3f01b58d2b85b5ed6c296b053376419bcd245e98ce045b1cc762ce314fa41ef8"
+  },
+  "data/pref/eval.parquet": {
+    "size": 239938,
+    "sha256": "54e58e6033b838db373ddd0737d3ae99c606fd3932391b751cddf236149bcf26"
+  },
+  "data/pref/stats.json": {
+    "size": 178,
+    "sha256": "e142ae8ae767942370a4df84d19d357551fac8412473593086b09992ce24ab27"
+  },
+  "data/eval/side_by_side.jsonl": {
+    "size": 121155,
+    "sha256": "92fa9ce2f27c3c9d8ea111dd2efaadd5e2cf535e0e0e77706184fc5a0830cf7a"
+  },
+  "data/eval/judge_summary.json": {
+    "size": 3199,
+    "sha256": "3b0364f5a224ebadced8d4f36e27c1f7678763a2166b8ef78a38689c73bdbe2d"
+  },
+  "data/eval/judge_results_rm.json": {
+    "size": 391012,
+    "sha256": "9328067ec437fa65030d3233076153461b974c8741c139b33408d98c91d1709e"
+  },
+  "submission/screenshots/02-sft-loss.png": {
+    "size": 37041,
+    "sha256": "d6b284384158dd6b9eb955e450655ae2c10c084a1880517fba5f14f69ff8b346"
+  },
+  "submission/screenshots/02b-pref-length.png": {
+    "size": 24629,
+    "sha256": "1cda78191aa2a83d7b5fa94f79bb1eb44beeada878f35ae086c21c3560941abc"
+  },
+  "submission/screenshots/03-dpo-reward-curves.png": {
+    "size": 126303,
+    "sha256": "3f713d6b16ad249159f33ccc2896345f5470bc9c936d58da0831761d138490df"
+  },
+  "submission/screenshots/04-side-by-side-table.png": {
+    "size": 195311,
+    "sha256": "56a856d1272a851f2a4a555271bf41873c6fbc4e72669013f64cad58265b168e"
+  }
+}

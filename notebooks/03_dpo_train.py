@@ -64,6 +64,7 @@ print(f"train={len(train_ds)} eval={len(eval_ds)}  columns={train_ds.column_name
 # %%
 from trl import DPOTrainer
 
+torch.cuda.reset_peak_memory_stats()
 args = MD.dpo_config(C.ADAPTERS / "dpo-checkpoints")
 print(f"loss_type={args.loss_type} beta={args.beta} lr={args.learning_rate} "
       f"precompute_ref={args.precompute_ref_log_probs} max_length={args.max_length}")
@@ -128,6 +129,9 @@ metrics = {
     "loss_type": C.DPO_LOSS,
     "epochs": C.DPO_EPOCHS,
     "final_train_loss": float(result.training_loss),
+    "train_runtime_s": result.metrics.get("train_runtime"),
+    "peak_vram_allocated_gib": torch.cuda.max_memory_allocated() / 1024**3,
+    "peak_vram_reserved_gib": torch.cuda.max_memory_reserved() / 1024**3,
     "first_logged_loss": first_loss,
     "end_chosen_reward": last(train_hist, "rewards/chosen"),
     "end_rejected_reward": last(train_hist, "rewards/rejected"),

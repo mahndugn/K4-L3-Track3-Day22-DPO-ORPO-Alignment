@@ -114,16 +114,25 @@ fixed = records[: len(FIXED_PROMPTS)]
 for r in fixed:
     print(f"\n[{r['id']} · {r['category']}] {r['prompt']}\n  SFT: {textwrap.shorten(r['sft'], 300)}\n  DPO: {textwrap.shorten(r['dpo'], 300)}")
 
-fig, ax = plt.subplots(figsize=(14, 0.7 * len(fixed) + 1.5))
+fig, ax = plt.subplots(figsize=(14, 1.25 * len(fixed) + 1.0))
 ax.axis("off")
+
+
+def table_excerpt(text, width, limit=180):
+    return "\n".join(textwrap.wrap(textwrap.shorten(text, limit), width=width))
+
+
 cells = [["id", "prompt", "SFT", "SFT+DPO"]] + [
-    [r["id"], textwrap.shorten(r["prompt"], 40), textwrap.shorten(r["sft"], 70), textwrap.shorten(r["dpo"], 70)]
+    [r["id"], table_excerpt(r["prompt"], 28), table_excerpt(r["sft"], 42), table_excerpt(r["dpo"], 42)]
     for r in fixed
 ]
-table = ax.table(cellText=cells, loc="center", cellLoc="left", colWidths=[0.05, 0.25, 0.35, 0.35])
+table = ax.table(cellText=cells, bbox=[0, 0, 1, 1], cellLoc="left", colWidths=[0.05, 0.25, 0.35, 0.35])
 table.auto_set_font_size(False)
 table.set_fontsize(8)
-table.scale(1.0, 1.6)
+row_units = [max(t.count("\n") + 1 for t in row) + 1 for row in cells]
+for i, units in enumerate(row_units):
+    for j in range(4):
+        table[(i, j)].set_height(units / sum(row_units))
 for j in range(4):
     table[(0, j)].set_facecolor("#2e548a")
     table[(0, j)].set_text_props(color="white", weight="bold")
